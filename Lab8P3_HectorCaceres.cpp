@@ -1,40 +1,23 @@
 // Lab8P3_HectorCaceres.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <iomanip>
+#include <vector>
 #include "Concierto.h"
 using namespace std;
+
 int main() {
-    int opcion;
-    do {
-        cout << "Seleccione una opcion:" << endl;
-        cout << "1. Crear un nuevo concierto" << endl;
-        cout << "2. Vender una entrada" << endl;
-        cout << "3. Ver detalles de un concierto" << endl;
-        cout << "4. Salir" << endl;
-        cin >> opcion;
-        switch (opcion) {
-        case 1:
-            crearConcierto();
-            break;
-        case 2:
-            venderEntrada();
-            break;
-        case 3:
-            imprimir_concierto();
-            break;
-        case 4:
-            cout << "Saliendo del programa." << endl;
-            break;
-        default:
-            cout << "Opcion invalida. Intente de nuevo." << endl;
-            break;
-        }
-    } while (opcion != 4);
+
+    // Ejemplo de uso
+    Concierto concierto1("Banda1", 100.5678, "10/03/2023", "A12345");
+    concierto1.vender_entrada();
+    concierto1.guardar_concierto();
+
+    Concierto concierto2("Banda2", 200.9876, "15/03/2023", "B67890");
+    concierto2.vender_entrada();
+    concierto2.guardar_concierto();
 
     return 0;
-}
 }
